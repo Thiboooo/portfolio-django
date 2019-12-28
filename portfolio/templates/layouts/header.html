@@ -1,0 +1,44 @@
+{% load static %}
+
+<!-- SOTRAMP 26/12 -->
+<!DOCTYPE html>
+<html>
+<head>  
+    <meta charset="UTF-8">
+    <title>Sotramp - Portfolio</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/scroll.js' %}"></script>
+</head>
+</html>
+<body>
+
+    <!-- Menu principal -->
+    <header>
+        <ul id="menu">
+            <a href="#"><li>Accueil</li></a>
+            <a href="#blog"><li>Blog</li></a>
+            <a href="#competences"><li>Compétences</li></a>
+            <a href="#contact"><li>Contact</li></a>
+            <a href="#"><li>CV</li></a>
+        </ul>
+
+        <div id="content">
+
+            <!-- Logo -->
+            <h1>sotramp</h1>
+            <div id="social">
+                <a href="https://twitter.com/sotramp" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="https://www.instagram.com/damienclairet/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+
+            <!-- Texte droit -->
+            <p>Étudiant en 2ème année de DUT Informatique, je m'intéresse au développement web depuis maintenant plusieurs années. Vous retrouverez sur ce portfolio mes compétences, mes projets ainsi que les moyens de me contacter.</p>
+        </div>
+
+    <!-- Diagonale -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon fill="white" points="0,100 100,0 100,100"/>
+    </svg>
+    </header>
