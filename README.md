@@ -16,7 +16,7 @@ git clone https://github.com/sotramp/portfolio-django.git
 ```
 # To Run it
 ```
-cd portfolio
+cd portfolio-django
 ```
 ```
 python3 mangage.py
