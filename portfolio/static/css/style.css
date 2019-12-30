@@ -80,7 +80,7 @@ ul#menu a:after {
     margin: 0 auto;
     left: 0;
     right: 0;
-    width: 5px;
+    width: 0;
     background: black;
     -o-transition:.5s;
     -ms-transition:.5s;
@@ -118,6 +118,18 @@ ul#blog a li{
     padding:20px;
 }
 
+ul#blog a li::before{
+    /*content: '';
+    display: block;
+    width: 290px;
+    height: 150px;
+    margin: -20px 0 0 -20px;
+    background-size:contain;
+    border-radius: 5px 5px 0 0;*/
+    content:'';
+    background-color:#00000075;
+}
+
 ul#blog a li:hover{
     background-color:rgb(53, 53, 53);
 }
@@ -140,6 +152,37 @@ h2#competences{
     border-top:1px solid black;
     padding-top:20px;
 }
+
+/* List of skills */
+ul#skills{
+    width:900px;
+    padding-left:0;
+}
+
+ul#skills li{
+    display:inline-block;
+    width:49%;
+    height:40px;
+    list-style-type: none;
+    background-color:#82ccdd;
+    border-radius:5px;
+    margin:0 5px 10px 0;
+}
+.progress {
+    padding-right: 24px;
+    background: #60a3bc;
+    display: inline-block;
+    height: 40px;
+    line-height: 42px;
+    border-radius: 5px;
+}
+
+/*.bar {
+    width: 80%;
+    -moz-animation: test 2s ease;
+    -webkit-animation: test 2s ease;
+}*/
+
 
 /* Footer */
 footer{
