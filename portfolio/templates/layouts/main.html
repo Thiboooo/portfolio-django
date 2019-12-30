@@ -1,11 +1,15 @@
-    <!-- Articles -->
+    <!-- Projects -->
     <div class="main">
         <h2 id="blog">Mes projets</h2>
 
         <ul id="blog">
-            <a href='#'><li><h2>title</h2><p>desc</p><p class='more'>En lire plus..</p></li></a>
+            {% for project in last_projects %}
+                <a href="{% url 'more' id=project.id slug=project.slug %}"><li><h2>{{ project.name }}</h2><p>{{ project.desc|truncatewords_html:80 }}</p><p class='more'>En lire plus..</p></li></a>
+            {% empty %}
+            <p>Aucun projet.</p>
+            {% endfor %}
         </ul>
 
-        <!-- Compétences -->
+        <!-- Skills -->
         <h2 id="competences">Mes compétences</h2>
     </div>

@@ -1,0 +1,11 @@
+{% include 'layouts/header.html' %}
+
+    <!-- Project -->
+    <div class="in">
+        <h1>{{ project.name }}</h1>
+        <i>{{ project.date|date:"DATE_FORMAT" }}</i>
+        <p>{{ project.desc }}</p>
+    </div>
+
+{% include 'layouts/footer.html' %}
+
