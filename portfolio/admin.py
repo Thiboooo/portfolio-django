@@ -23,7 +23,7 @@ class ProjectAdmin(admin.ModelAdmin):
     # Form configuration
     fieldsets = (
        ('Général', {
-            'fields': ('name', 'slug')
+            'fields': ('name', 'slug', 'image')
         }),
         ('Contenu du projet', {
            'description': 'Courte description du projet. Le formulaire accepte les balises HTML.',

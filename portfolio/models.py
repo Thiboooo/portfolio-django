@@ -4,7 +4,8 @@ from django.utils import timezone
 # Project model
 class Project(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nom du projet")
-    slug = models.SlugField(max_length=100,null=True)
+    slug = models.SlugField(max_length=100, null=True)
+    image = models.CharField(max_length=500, null=True, verbose_name="Image du projet")
     desc = models.TextField(null=True, verbose_name="Description du projet")
     date = models.DateTimeField(default=timezone.now, verbose_name="Date de publication")
     

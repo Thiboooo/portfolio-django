@@ -1,11 +1,14 @@
-{% include 'layouts/header.html' %}
+{% extends 'layouts/gabarit.html' %}
+{% block title %}{{ project.name }}{% endblock %}
 
+    {% block content %}
     <!-- Project -->
     <div class="in">
         <h1>{{ project.name }}</h1>
         <i>{{ project.date|date:"DATE_FORMAT" }}</i>
         <p>{{ project.desc }}</p>
+        <img src="{{ project.image }}" style="width:900px;">
+        <a href="#">Lien GitHub</a>
+        <a href="#">Lien démonstration</a>
     </div>
-
-{% include 'layouts/footer.html' %}
-
+    {% endblock %}
