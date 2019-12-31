@@ -6,6 +6,17 @@ body{
     margin:0;
 }
 
+/* Text selection */
+::selection{
+    color: #fff;
+    background: #fdcb6e;
+}
+
+::-moz-selection{ /* for mozilla */
+    color: #fff;
+    background: #fdcb6e;
+}
+
 .in{
     margin:auto;
     width:900px;
@@ -141,6 +152,22 @@ h2#competences{
     margin-top:70px;
     border-top:1px solid black;
     padding-top:20px;
+}
+
+/* Project page */
+.projectButtons{
+    display: block;
+    text-decoration: none;
+    color: #24292e;
+    padding: 15px;
+    border: 1px solid #24292e;
+    margin: 8px 0 8px;
+    background:transparent;
+}
+
+.projectButtons:hover{
+    background-color:#24292e;
+    color:white;
 }
 
 /* List of skills */

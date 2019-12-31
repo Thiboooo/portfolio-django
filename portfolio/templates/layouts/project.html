@@ -9,7 +9,7 @@
         <p><i class="fas fa-tags"></i> {{ project.labels }}</p>
         <p>{{ project.desc }}</p>
         <img src="{{ project.image }}" style="width:900px;">
-        {% if project.github %}<a href="{{ project.github }}">Lien GitHub</a>{%  endif %}
-        {% if project.demo %}<a href="{{ project.demo }}">Lien de démonstration</a>{%  endif %}
+        {% if project.github %}<a class="projectButtons" href="{{ project.github }}">Lien GitHub <i class="fab fa-github fa-2x" style="float:right;"></i></a>{%  endif %}
+        {% if project.demo %}<a class="projectButtons" href="{{ project.demo }}">Lien de démonstration <i class="fas fa-eye fa-2x" style="float:right;"></i></a>{%  endif %}
     </div>
     {% endblock %}
