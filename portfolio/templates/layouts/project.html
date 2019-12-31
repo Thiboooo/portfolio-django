@@ -6,9 +6,10 @@
     <div class="in">
         <h1>{{ project.name }}</h1>
         <i>{{ project.date|date:"DATE_FORMAT" }}</i>
+        <p><i class="fas fa-tags"></i> {{ project.labels }}</p>
         <p>{{ project.desc }}</p>
         <img src="{{ project.image }}" style="width:900px;">
-        <a href="#">Lien GitHub</a>
-        <a href="#">Lien démonstration</a>
+        {% if project.github %}<a href="{{ project.github }}">Lien GitHub</a>{%  endif %}
+        {% if project.demo %}<a href="{{ project.demo }}">Lien de démonstration</a>{%  endif %}
     </div>
     {% endblock %}

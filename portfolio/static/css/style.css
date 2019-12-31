@@ -109,7 +109,7 @@ ul#blog{
 
 ul#blog a li{
     display: inline-block;
-    width: 250px;
+    width: 44%;
     margin:0 5px 5px 0;
     height: auto;
     background-color: black;

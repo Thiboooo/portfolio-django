@@ -11,7 +11,7 @@ class ProjectAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name', ), }
     list_filter    = ('name', )
     date_hierarchy = 'date'
-    ordering       = ('date', )
+    ordering       = ('-date', )
     search_fields  = ('name', 'desc')
 
     def overview(self, project):
@@ -22,10 +22,14 @@ class ProjectAdmin(admin.ModelAdmin):
 
     # Form configuration
     fieldsets = (
-       ('Général', {
-            'fields': ('name', 'slug', 'image')
+       ('Informations', {
+            'fields': ('name', 'slug', 'image', 'labels')
         }),
-        ('Contenu du projet', {
+        ('Les liens', {
+            'description': 'Le remplissage n\'est pas obligatire, les champs peuvent donc rester vides.',
+            'fields': ('github', 'demo')
+        }),
+        ('Description du projet', {
            'description': 'Courte description du projet. Le formulaire accepte les balises HTML.',
            'fields': ('desc', )
         }),

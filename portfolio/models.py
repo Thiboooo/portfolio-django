@@ -6,12 +6,15 @@ class Project(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nom du projet")
     slug = models.SlugField(max_length=100, null=True)
     image = models.CharField(max_length=500, null=True, verbose_name="Image du projet")
+    labels = models.CharField(max_length=100, null=True, verbose_name="Langages utilisés")
     desc = models.TextField(null=True, verbose_name="Description du projet")
+    github = models.CharField(max_length=200, null=True, blank=True, verbose_name="Lien GitHub")
+    demo = models.CharField(max_length=200, null=True, blank=True, verbose_name="Lien Démonstration")
     date = models.DateTimeField(default=timezone.now, verbose_name="Date de publication")
     
     class Meta:
         verbose_name = "Projet"
-        ordering = ['date']
+        ordering = ['-date']
     
     def __str__(self):
         return self.name
