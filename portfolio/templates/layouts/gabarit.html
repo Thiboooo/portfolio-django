@@ -18,7 +18,7 @@
     <!-- Notification of success for the contact form  -->
     {% if messages %}
     {% for message in messages %}
-        <div id="notif{{ message.tags }}">{{ message }} <i id="closeNotif" class="fas fa-times"></i></div>
+        <div id="notif{{ message.tags }}" class="notif">{{ message }} <i id="closeNotif" class="fas fa-times"></i></div>
     {% endfor %}
     {% endif %}
 
