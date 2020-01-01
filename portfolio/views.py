@@ -1,11 +1,30 @@
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404,render
+from django.shortcuts import get_object_or_404, render, redirect
 from portfolio.models import Project
+from portfolio.forms import ContactForm
+from django.core.mail import EmailMessage
+from django.template.loader import get_template
 
 # Home page
 def index(request):
     projects = Project.objects.all()
-    return render(request, 'index.html', {'last_projects' : projects})
+    formInit = ContactForm
+
+    # contact form
+    if request.method == 'POST':
+        form = formInit(data=request.POST)
+        if form.is_valid():
+            contactName = request.POST.get('contactName', '')
+            contactEmail = request.POST.get('contactEmail', '')
+            message = request.POST.get('message', '')
+            template = get_template('contactTemplate.txt')
+            context = {'contactName': contactName,'contactEmail': contactEmail,'message': message,}
+            content = template.render(context)
+            email = EmailMessage("Nouveau message", content, "Portfolio Website" +'', ['contact@sotramp.io'], headers = {'Reply-To': contactEmail })
+            email.send()
+            return redirect('index')
+
+    return render(request, 'index.html', {'last_projects' : projects, 'form' : formInit})
 
 # Entire project
 def more(request, id, slug):
