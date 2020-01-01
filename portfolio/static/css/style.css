@@ -1,7 +1,7 @@
 /* CSS - SOTRAMP */
 
 body{
-    font: 14px "Century Gothic", Futura, sans-serif;
+    font: 1vw "Century Gothic", Futura, sans-serif;
     background-color:white;
     margin:0;
 }
@@ -19,7 +19,7 @@ body{
 
 .in{
     margin:auto;
-    width:900px;
+    width:63vw;
 }
 
 a{
@@ -32,18 +32,17 @@ a:hover{
 }
 
 /* Notification success */
+.notif{
+    display:block;
+    padding:1vw;
+    text-align:center;
+}
 #notifsuccess{
-    display: block;
-    padding: 15px;
     background-color: #2ecc71;
-    text-align: center;
 }
 
 #notiferror{
-    display: block;
-    padding: 15px;
     background-color: #e74c3c;
-    text-align: center;
 }
 
 #closeNotif{
@@ -55,31 +54,32 @@ a:hover{
 header{
     position:relative;
     background-color:#ffeaa7;
-    height:400px;
+    height:26vw;
 }
 
 header #content{
-    width: 900px;
-    margin: 50px auto;
+    width: 63vw;
+    margin: 3vw auto;
 }
 
 header #content h1{
     position:absolute;
-    top:100px; /* temp */
-    font-size:30px;
+    top:6vw; /* temp */
+    font-size:2.3vw;
 }
 
 header #content p{
     display:block;
-    font-size:16px;
-    width: 400px;
+    font-size:1.1vw;
+    width: 25vw;
     float:right;
     text-align:justify;
 }
 
 header #content #social{
+    font-size:1vw;
     position:absolute;
-    margin-top:50px;
+    margin-top:3.1vw;
 }
 
 header #content #social a{
@@ -95,28 +95,28 @@ header svg{
 
 /* Menu */
 ul#menu{
-    padding-left:0px; /* supprimer l'espace de la première puce */
-    width:540px;
+    padding-left:0; /* supprimer l'espace de la première puce */
+    width:38vw;
     margin:auto;
 }
 
 ul#menu a{
     position: relative; 
     list-style-type: none;
-    font-size: 16px;
+    font-size: 1.1vw;
     font-weight: 600;
     color: black;
     text-decoration: none;
     display: inline-block;
-    padding: 20px;
+    padding: 1.4vw;
     margin: auto;
 } 
 
 ul#menu a:after {
     position: absolute;
     content: '';
-    height: 2px;
-    bottom:15px;
+    height: 0.13vw;
+    bottom:1vw;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -137,26 +137,26 @@ ul#menu a:hover:after {
 
 /* Main */
 .main{
-    width:900px;
+    width:63vw;
     margin:auto;
 }
 
 /* List of projects */
 ul#blog{
-    width:900px;
+    width:63vw;
     padding-left:0;
 }
 
 ul#blog a li{
     display: inline-block;
     width: 44%;
-    margin:0 5px 5px 0;
+    margin:0 0.5vw 0.5vw 0;
     height: auto;
     background-color: black;
     background-size: cover;
-    border-radius: 5px;
+    border-radius: 0.4vw;
     color:white;
-    padding:20px;
+    padding:1.4vw;
     box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.6);
 }
 
@@ -165,12 +165,12 @@ ul#blog a li:hover{
 }
 
 ul#blog a li h2{
-    margin-bottom: -10px;
+    margin-bottom: -1vw;
     text-transform:uppercase;
 }
 
 ul#blog a li p{
-    font-size:15px;
+    font-size:1.1vw;
 }
 
 ul#blog a li p.more{
@@ -178,9 +178,9 @@ ul#blog a li p.more{
 }
 
 h2#competences{
-    margin-top:70px;
-    border-top:1px solid black;
-    padding-top:20px;
+    margin-top: 3vw;
+    border-top: 0.1vw solid black;
+    padding-top: 2vw;
 }
 
 /* Project page */
@@ -201,7 +201,7 @@ h2#competences{
 
 /* List of skills */
 ul#skills{
-    width:900px;
+    width:63vw;
     padding-left:0;
 }
 
@@ -232,10 +232,10 @@ ul#skills li{
 
 /* Footer */
 footer{
-    margin-top:50px;
-    position:relative;
-    background-color:black;
-    height:500px;
+    margin-top: 4vw;
+    position: relative;
+    background-color: black;
+    height: 40vw;
 }
 
 footer svg{
@@ -252,12 +252,12 @@ footer .in p{
 
 footer .in a{
     display:block;
-    margin-left:790px;
+    margin-left:55vw;
 }
 
 #contact{
     position:absolute;
-    top:70px;
+    top:5vw;
 }
 
 #contact h2{
@@ -266,60 +266,21 @@ footer .in a{
 
 #contact input,textarea{
     display: block;
-    padding: 10px;
-    border: 1px solid white;
+    padding: 1vw;
+    border: 0.1vw solid white;
     color: white;
-    font-size: 15px;
+    font-size: 1vw;
     background-color: black;
-    width: 550px;
-    margin-top: 20px;
+    width: 40vw;
+    margin-top: 2vw;
 }
 
 #contact input[type="submit"]{
-    width:572px;
+    width:42.3vw;
     cursor:pointer;
 }
 
 #contact input[type="submit"]:hover{
     background-color:white;
     color:black;
-}
-
-/* animation */
-/*
- * Keyframes
- */
-
-@keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-}
-  
-@keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translate3d(0, 100%, 0);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: none;
-    }
-}
-  
-@keyframes fadeInRight {
-    0% {
-      opacity: 0;
-      transform: translate3d(100%, 0, 0);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: none;
-    }
 }
