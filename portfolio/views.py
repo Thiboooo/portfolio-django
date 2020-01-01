@@ -25,7 +25,8 @@ def index(request):
             email.send()
             # Notification of success for the contact form
             messages.add_message(request, messages.SUCCESS, 'Votre message a été envoyé avec succès !')
-            #return redirect('index')
+            return redirect('index')
+        messages.add_message(request, messages.ERROR, 'Votre message n\'a pas pu être envoyé, veuillez réessayez.')
 
     return render(request, 'index.html', {'last_projects' : projects, 'form' : formInit})
 

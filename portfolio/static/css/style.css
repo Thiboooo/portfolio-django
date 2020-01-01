@@ -23,10 +23,17 @@ body{
 }
 
 /* Notification success */
-#notifSuccess{
+#notifsuccess{
     display: block;
     padding: 15px;
     background-color: #2ecc71;
+    text-align: center;
+}
+
+#notiferror{
+    display: block;
+    padding: 15px;
+    background-color: #e74c3c;
     text-align: center;
 }
 

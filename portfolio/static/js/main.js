@@ -1,23 +1,22 @@
 $(function() {
+    
     // delete loading
     "use strict";
-    $("#deleteLoading").smoothState({ debug: true });
-
-    // smooth
-    $("a[href*='#']:not([href='#'])").click(function() {
-        if(location.hostname == this.hostname && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")){
-            var anchor = $(this.hash);
-            anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
-            if(anchor.length){
-                $("html, body").animate( { scrollTop: anchor.offset().top }, 1500);
-            }
-        }
-    });
+    $("#deleteLoading").smoothState({debug: true});
 
     // close notification success
     $("#closeNotif").click(function() {
-        $("#notifSuccess").slideUp();
+        if(typeof $('#notifsuccess') != 'undefined') {$("#notifsuccess").slideUp();}
+        if(typeof $('#notiferror') != 'undefined'){$("#notiferror").slideUp();}
     });
+
+    // smooth scroll
+    $("a[href*='#']:not([href='#'])").click(function() {
+        var page = $(this).attr('href');
+        var speed = 750;
+        $('html, body').animate( { scrollTop: $(page).offset().top }, speed );
+        return false;
+  });
 
 });
 
