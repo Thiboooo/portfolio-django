@@ -4,13 +4,14 @@ from portfolio.models import Project
 from portfolio.forms import ContactForm
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
+from django.contrib import messages
 
 # Home page
 def index(request):
     projects = Project.objects.all()
     formInit = ContactForm
 
-    # contact form
+    # Contact form
     if request.method == 'POST':
         form = formInit(data=request.POST)
         if form.is_valid():
@@ -22,7 +23,9 @@ def index(request):
             content = template.render(context)
             email = EmailMessage("Nouveau message", content, "Portfolio Website" +'', ['contact@sotramp.io'], headers = {'Reply-To': contactEmail })
             email.send()
-            return redirect('index')
+            # Notification of success for the contact form
+            messages.add_message(request, messages.SUCCESS, 'Votre message a été envoyé avec succès !')
+            #return redirect('index')
 
     return render(request, 'index.html', {'last_projects' : projects, 'form' : formInit})
 

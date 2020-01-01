@@ -22,6 +22,19 @@ body{
     width:900px;
 }
 
+/* Notification success */
+#notifSuccess{
+    display: block;
+    padding: 15px;
+    background-color: #2ecc71;
+    text-align: center;
+}
+
+#closeNotif{
+    float:right;
+    cursor:pointer;
+}
+
 /* Header */
 header{
     position:relative;
