@@ -7,7 +7,7 @@
 
         <ul id="blog">
             {% for project in last_projects %}
-                <a href="{% url 'more' id=project.id slug=project.slug %}"><li style="background-image:url('{{ project.image }}');"><h2>{{ project.name }}</h2><p>{{ project.desc|truncatewords_html:10 }}</p><p class='more'>En lire plus..</p></li></a>
+                <a href="{% url 'more' id=project.id slug=project.slug %}"><li style="background-image:url('{{ project.image.url }}');"><h2>{{ project.name }}</h2><p>{{ project.desc|truncatewords_html:10 }}</p><p class='more'>En lire plus..</p></li></a>
             {% empty %}
             <p>Aucun projet.</p>
             {% endfor %}

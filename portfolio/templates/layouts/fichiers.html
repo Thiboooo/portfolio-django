@@ -1,6 +1,4 @@
 {% load static %}
-<!--<img src="{% static 'img/bg_test.jpg' %}">-->
 {% for fichier in fichiers %}
-    <!--<p>{{ fichier.test.url }}</p>-->
     <img src="{{ fichier.specifications.url }}" alt="{{ fichier.name }}">
 {% endfor %}

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.text import Truncator
-from .models import Project, UploadFile
+from .models import Project, UploadImg
 
 # Project class
 class ProjectAdmin(admin.ModelAdmin):
@@ -35,5 +35,13 @@ class ProjectAdmin(admin.ModelAdmin):
         }),
     )
 
+# Upload image class
+class UploadImgAdmin(admin.ModelAdmin):
+    # List configuration
+    list_display   = ('projet', 'name')
+    ordering       = ('-name', )
+    search_fields  = ('name', )
+
+# Model insertion
 admin.site.register(Project, ProjectAdmin)
-admin.site.register(UploadFile)
+admin.site.register(UploadImg, UploadImgAdmin)

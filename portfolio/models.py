@@ -5,7 +5,7 @@ from django.utils import timezone
 class Project(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nom du projet")
     slug = models.SlugField(max_length=100, null=True)
-    image = models.CharField(max_length=500, null=True, verbose_name="Image du projet")
+    image = models.ImageField(upload_to='gallery', null=True, verbose_name="Image du projet")
     labels = models.CharField(max_length=100, null=True, verbose_name="Langages utilisés")
     desc = models.TextField(null=True, verbose_name="Description du projet")
     github = models.CharField(max_length=200, null=True, blank=True, verbose_name="Lien GitHub")
@@ -20,12 +20,13 @@ class Project(models.Model):
         return self.name
 
 # Upload file in Django Admin
-class UploadFile(models.Model):
+class UploadImg(models.Model):
+    projet = models.ForeignKey(Project, default=None, on_delete=models.PROTECT)
     name = models.CharField(max_length=100, null=True, verbose_name="Nom de l'image")
-    specifications = models.ImageField(upload_to='gallery', null=True, verbose_name="Image")
+    link = models.ImageField(upload_to='gallery', null=True, verbose_name="Image")
     
     class Meta:
-        verbose_name = "Fichier"
+        verbose_name = "Image"
 
     def __str__(self):
         return self.name
