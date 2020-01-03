@@ -34,5 +34,5 @@ def index(request):
 # Entire project
 def more(request, id, slug):
     project = get_object_or_404(Project, id=id, slug=slug)
-    fichiers = UploadImg.objects.all()
+    fichiers = UploadImg.objects.filter(projet=project)
     return render(request, 'layouts/project.html', {'project':project, 'fichiers':fichiers})

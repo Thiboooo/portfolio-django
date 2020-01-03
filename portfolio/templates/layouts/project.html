@@ -1,5 +1,6 @@
 {% extends 'layouts/gabarit.html' %}
 {% block title %}{{ project.name }}{% endblock %}
+{% load static %}
 
     {% block content %}
     <!-- Project -->
@@ -9,10 +10,16 @@
         <i>{{ project.date|date:"DATE_FORMAT" }}</i>
         <p><i><i class="fas fa-tags"></i><b> Langages :</b> {{ project.labels }}</i></p>
         <p>{{ project.desc }}</p>
-        <img src="{{ project.image.url }}" style="width:900px;">
-        {% for fichier in fichiers %}
-            <img src="{{ fichier.link.url }}" alt="{{ fichier.name }}">
-        {% endfor %}
+
+        <ul id="galerie">
+            {% for fichier in fichiers %}
+                <a rel="zoom" href="{{ fichier.link.url }}" alt="{{ fichier.name }}"><img src="{{ fichier.link.url }}" style="width:400px;height:250px;" ></a>
+            {% endfor %}
+        </ul>
+
+        <!-- Lightbox -->
+        <div class="lightbox"></div>
+
         {% if project.github %}<a class="projectButtons" href="{{ project.github }}">Lien GitHub <i class="fab fa-github fa-2x" style="float:right;"></i></a>{%  endif %}
         {% if project.demo %}<a class="projectButtons" href="{{ project.demo }}">Lien de démonstration <i class="fas fa-eye fa-2x" style="float:right;"></i></a>{%  endif %}
     </div>

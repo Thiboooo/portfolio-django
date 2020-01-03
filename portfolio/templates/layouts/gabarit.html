@@ -7,13 +7,18 @@
     <meta charset="UTF-8">
     <title>Sotramp - {% block title %}Portfolio{% endblock %}</title>
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/lightbox.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'css/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'js/smoothstate.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </head>
 </html>
 <body>
+    
+    <!-- Lightbox background -->
+    <div class="voile"></div>
 
     <!-- Notification of success for the contact form  -->
     {% if messages %}

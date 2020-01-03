@@ -39,7 +39,7 @@ class ProjectAdmin(admin.ModelAdmin):
 class UploadImgAdmin(admin.ModelAdmin):
     # List configuration
     list_display   = ('projet', 'name')
-    ordering       = ('-name', )
+    ordering       = ('projet', )
     search_fields  = ('name', )
 
 # Model insertion

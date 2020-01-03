@@ -21,12 +21,13 @@ class Project(models.Model):
 
 # Upload file in Django Admin
 class UploadImg(models.Model):
-    projet = models.ForeignKey(Project, default=None, on_delete=models.PROTECT)
+    projet = models.ForeignKey(Project, default=None, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, null=True, verbose_name="Nom de l'image")
     link = models.ImageField(upload_to='gallery', null=True, verbose_name="Image")
     
     class Meta:
         verbose_name = "Image"
+        ordering = ['-name']
 
     def __str__(self):
         return self.name
