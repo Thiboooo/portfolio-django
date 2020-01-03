@@ -22,7 +22,7 @@ class Project(models.Model):
 # Upload file in Django Admin
 class UploadFile(models.Model):
     name = models.CharField(max_length=100, null=True, verbose_name="Nom de l'image")
-    specifications = models.ImageField(upload_to='portfolio/static/img', null=True, verbose_name="Image")
+    specifications = models.ImageField(upload_to='gallery', null=True, verbose_name="Image")
     
     class Meta:
         verbose_name = "Fichier"
