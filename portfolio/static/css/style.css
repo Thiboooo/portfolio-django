@@ -135,15 +135,8 @@ ul#menu a:hover:after {
     background: black;
  }
 
-/* Main */
-.main{
-    width:63vw;
-    margin:auto;
-}
-
 /* List of projects */
 ul#blog{
-    width:63vw;
     padding-left:0;
 }
 
@@ -201,7 +194,6 @@ h2#competences{
 
 /* List of skills */
 ul#skills{
-    width:63vw;
     padding-left:0;
 }
 
@@ -283,4 +275,14 @@ footer .in a{
 #contact input[type="submit"]:hover{
     background-color:white;
     color:black;
+}
+
+/* Mobile version */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+{
+    .in{
+        width:100%;
+    }
 }

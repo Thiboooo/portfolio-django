@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
-from portfolio.models import Project
+from portfolio.models import Project, UploadFile
 from portfolio.forms import ContactForm
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
@@ -35,3 +35,8 @@ def index(request):
 def more(request, id, slug):
     project = get_object_or_404(Project, id=id, slug=slug)
     return render(request, 'layouts/project.html', {'project':project})
+
+# File page (test)
+def fichier(request):
+    fichiers = UploadFile.objects.all()
+    return render(request, 'layouts/fichiers.html', {'fichiers':fichiers})

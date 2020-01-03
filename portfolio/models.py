@@ -18,3 +18,14 @@ class Project(models.Model):
     
     def __str__(self):
         return self.name
+
+# Upload file in Django Admin
+class UploadFile(models.Model):
+    name = models.CharField(max_length=100, null=True, verbose_name="Nom de l'image")
+    specifications = models.ImageField(upload_to='portfolio/static/img', null=True, verbose_name="Image")
+    
+    class Meta:
+        verbose_name = "Fichier"
+
+    def __str__(self):
+        return self.name
