@@ -1,4 +1,5 @@
 {% extends 'layouts/gabarit.html' %}
+{% load static %}
 
     {% block content %}
     <!-- Projects -->
@@ -7,17 +8,25 @@
 
         <ul id="blog">
             {% for project in last_projects %}
-                <a href="{% url 'more' id=project.id slug=project.slug %}"><li style="background-image:url('{{ project.image.url }}');"><h2>{{ project.name }}</h2><p>{{ project.desc|truncatewords_html:10 }}</p><p class='more'>En lire plus..</p></li></a>
+                <a class="animsition-link" href="{% url 'more' id=project.id slug=project.slug %}" data-animsition-out-class="overlay-slide-out-right"><li style="background-image:url('{{ project.image.url }}');"><h2>{{ project.name }}</h2><p>{{ project.desc|truncatewords_html:9 }}</p><p class='more'>En lire plus..</p></li></a>
             {% empty %}
             <p>Aucun projet.</p>
             {% endfor %}
         </ul>
 
         <!-- Skills -->
-        <h2 id="competences">Mes compétences</h2>
-        <ul id="skills">
-            <!--<li><span class="progress bar" style="width:60%;"></span><em>test</em></li>
-            <li><span class="progress bar"></span><em></em></li>-->
-        </ul>
+        <h2 id="competences" class="darktheme">Mes compétences</h2>
+        <div id="skills">
+            <i class="devicon-html5-plain colored" data-title="HTML5"></i>
+            <i class="devicon-css3-plain colored" data-title="CSS3"></i>
+            <i class="devicon-javascript-plain colored" data-title="Javascript"></i>
+            <i class="devicon-php-plain colored" data-title="PHP"></i>
+            <i class="devicon-postgresql-plain-wordmark colored" data-title="PostgreSQL"></i>
+            <i class="devicon-python-plain-wordmark colored" data-title="Python"></i>
+            <i class="devicon-bootstrap-plain colored" data-title="Bootstrap"></i>
+            <i class="devicon-wordpress-plain colored" data-title="WordPress"></i>
+            <i class="devicon-django-plain colored" data-title="Django"></i>
+        </div>
+        
     </div>
     {% endblock %}

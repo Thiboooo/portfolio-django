@@ -5,13 +5,16 @@
     {% block content %}
     <!-- Project -->
     <div class="in">
-        <a href=".."><i class="fas fa-arrow-left"></i> Retour</a>
-        <h1>{{ project.name }}</h1>
-        <i>{{ project.date|date:"DATE_FORMAT" }}</i>
-        <p><i><i class="fas fa-tags"></i><b> Langages :</b> {{ project.labels }}</i></p>
-        <p>{{ project.desc }}</p>
+        <a class="animsition-link" href=".." data-animsition-out-class="overlay-slide-out-left" class="previous"><i class="fas fa-arrow-left"></i> Retour</a>
+        <div id="project_header">
+            <h1>{{ project.name }}</h1>
+            <i>{{ project.date|date:"DATE_FORMAT" }}</i>
+            <p><i><i class="fas fa-tags"></i><b> Langages :</b> {{ project.labels }}</i></p>
+        </div>
+        
+        <p>{{ project.desc|safe }}</p>
 
-        <ul id="galerie">
+        <ul id="gallery">
             {% for fichier in fichiers %}
                 <a rel="zoom" href="{{ fichier.link.url }}" alt="{{ fichier.name }}"><img src="{{ fichier.link.url }}" style="width:400px;height:250px;" ></a>
             {% endfor %}

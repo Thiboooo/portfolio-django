@@ -1,8 +1,4 @@
-$(function() {
-    
-    // delete loading
-    "use strict";
-    $("#deleteLoading").smoothState({debug: true});
+$(function($) {
 
     // close notification success
     $("#closeNotif").click(function() {

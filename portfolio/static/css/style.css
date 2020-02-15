@@ -1,9 +1,20 @@
-/* CSS - SOTRAMP */
+/* CSS - DAMIEN CLAIRET */
 
 body{
-    font: 1vw "Century Gothic", Futura, sans-serif;
+    font: 1vw "Futura", sans-serif;
     background-color:white;
     margin:0;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    body {background-color:black;color:white;}
+    header.darktheme {background-color:#6c5ce7;color:white;}
+    header.darktheme #content #social a{color:white;}
+    header.darktheme ul#menu a {color:white;}
+    header.darktheme ul#menu a:after, header.darktheme ul#menu a:hover:after {color:white;}
+    header.darktheme svg polygon{fill:black}
+    h2#competences.darktheme{border-color:white}
 }
 
 /* Text selection */
@@ -25,6 +36,12 @@ body{
 a{
     text-decoration:none;
     color:black;
+}
+
+a.previous{
+    border: 1px solid black;
+    padding: 10px;
+    text-decoration: none;
 }
 
 a:hover{
@@ -55,6 +72,7 @@ header{
     position:relative;
     background-color:#ffeaa7;
     height:26vw;
+    margin-bottom: 20px;
 }
 
 header #content{
@@ -150,11 +168,13 @@ ul#blog a li{
     border-radius: 0.4vw;
     color:white;
     padding:1.4vw;
-    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
+    transition: .3s;
+    box-shadow: inset 200vw 0 0 0 rgba(0, 0, 0, 0.5);
 }
 
 ul#blog a li:hover{
-    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.3);
+    transition: .3s;
+    box-shadow: inset 200vw 0 0 0 rgba(0, 0, 0, 0.3);
 }
 
 ul#blog a li h2{
@@ -170,13 +190,17 @@ ul#blog a li p.more{
     text-decoration:underline;
 }
 
-h2#competences{
-    margin-top: 3vw;
-    border-top: 0.1vw solid black;
-    padding-top: 2vw;
+/* Project page */
+#project_header{
+    text-align: center;
+    background-size: cover;
+    margin: 1vw 0 1vw 0;
+    background-color: #e0e0e0;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    border-bottom: 2px solid grey;
 }
 
-/* Project page */
 .projectButtons{
     display: block;
     text-decoration: none;
@@ -192,35 +216,44 @@ h2#competences{
     color:white;
 }
 
-/* List of skills */
-ul#skills{
-    padding-left:0;
+/* Skills */
+h2#competences{
+    margin-top: 3vw;
+    border-top: 0.1vw solid black;
+    padding-top: 2vw;
 }
 
-ul#skills li{
-    display:inline-block;
-    width:49%;
-    height:40px;
-    list-style-type: none;
-    background-color:#82ccdd;
-    border-radius:5px;
-    margin:0 5px 10px 0;
-}
-.progress {
-    padding-right: 24px;
-    background: #60a3bc;
-    display: inline-block;
-    height: 40px;
-    line-height: 42px;
-    border-radius: 5px;
+#skills{
+    word-spacing: 1.8vw;
 }
 
-/*.bar {
-    width: 80%;
-    -moz-animation: test 2s ease;
-    -webkit-animation: test 2s ease;
-}*/
+#skills i{
+    font-size: 5vw;
+}
 
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+[data-title]:after {
+    font: 1vw "Futura", sans-serif;
+    content: attr(data-title);
+    background-color: rgba(0,0,0, 0.7);
+    color: white;
+    position: absolute;
+    padding: 0.6vw;
+    left: 70%;
+    top: 70%;
+    white-space: nowrap;
+    opacity: 0;
+    border: 1px solid #111111;
+    z-index: 99999;
+    visibility: hidden;
+}
+[data-title] {
+    position: relative;
+}
 
 /* Footer */
 footer{
@@ -267,6 +300,23 @@ footer .in a{
     margin-top: 2vw;
 }
 
+/* Placeholder */
+::-webkit-input-placeholder {
+    color: white;
+}
+ 
+:-moz-placeholder { /* Firefox 18- */
+    color: white;  
+}
+ 
+::-moz-placeholder {  /* Firefox 19+ */
+    color: white;  
+}
+ 
+:-ms-input-placeholder {  
+    color: white;  
+ }
+
 #contact input[type="submit"]{
     width:42.3vw;
     cursor:pointer;
@@ -280,9 +330,142 @@ footer .in a{
 /* Mobile version */
 @media only screen
 and (min-device-width : 320px)
-and (max-device-width : 480px)
+and (max-device-width: 800px)
 {
+
+    p, b, i, a{
+        font-size: 17px;
+    }
+
+    h1{
+        font-size: 70px;
+    }
+
+    h2{
+        font-size: 40px;
+    }
+
     .in{
-        width:100%;
+        width: 800px;
+    }
+
+    header{
+        height: 550px;
+        margin-bottom: 80px;
+    }
+
+    header #content{
+        width: 800px;
+        margin: auto;
+        /*overflow: auto;*/
+        text-align: center;
+    }
+
+    header #content h1{
+        font-size: 70px;
+        position: relative;
+        top: 0;
+        margin: 40px 0 0;
+    }
+
+    header #content #social{
+        font-size: 20px;
+        margin: 0;
+        position: relative;
+    }
+
+    header #content p{
+        display: block;
+        font-size: 30px;
+        text-align: justify;
+        margin-top: 70px;
+        float: none;
+        width: 100%;
+    }
+
+    header svg{
+        display: none;
+    }
+
+    ul#menu{
+        width: 710px;
+    }
+
+    ul#menu a{
+        font-size: 25px;
+        padding: 20px;
+    }
+
+    ul#blog a li{
+        display: block;
+        width: 90%;
+        margin: 0 5px 5px 0;
+        border-radius: 5px;
+        padding: 5%;
+        text-align: center;
+    }
+
+    ul#blog a li p{
+        font-size: 15px;
+    }
+
+    #skills i{
+        font-size: 130px;
+        line-height: 180px;
+    }
+
+    h2#competences{
+        margin-top: 50px;
+        border-top: 1px solid black;
+        padding-top: 50px;
+    }
+
+    footer{
+        margin-top: 40px;
+        height: 800px;
+        text-align: center;
+    }
+
+    footer svg{
+        display: none;
+    }
+
+    #contact input, textarea {
+        padding: 20px;
+        border: 1px solid white;
+        font-size: 30px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    input[type="submit"] {
+        display: block;
+        color: white;
+        background-color: black;
+    }
+
+    footer #contact{
+        width: 75%;
+    }
+
+    footer #contact h2{
+        font-size: 50px;
+    }
+
+    #contact input[type="submit"] {
+        width: 105%;
+    }
+
+    footer .in p{
+        font-size: 30px;
+    }
+
+    footer .in a p{
+        display: none;
+    }
+
+    .notif{
+        padding: 15px;
+        font-size: 13px;
     }
 }

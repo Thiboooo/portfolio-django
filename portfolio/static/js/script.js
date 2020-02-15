@@ -1,7 +1,7 @@
 // Lightbox
 
 function afficher_image(index){
-    var longueur = galerie.getElementsByTagName("a").length;
+    var longueur = gallery.getElementsByTagName("a").length;
     var images = $("a[rel='zoom']");
     var taille = index+1;
 
@@ -57,6 +57,15 @@ $(document).ready(function(){
                 $(".lightbox").fadeOut();
             break;
         }
+    });
+
+    // Swipe left et right pour la version mobile
+    $(".lightbox").bind('swipeleft',function(){
+        $("a#right").click();
+    });
+
+    $(".lightbox").bind('swiperight',function(){
+        $("#left").click();
     });
 
     $(".voile").click(function(){

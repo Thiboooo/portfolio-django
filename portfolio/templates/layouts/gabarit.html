@@ -1,22 +1,25 @@
 {% load static %}
 
-<!-- SOTRAMP 26/12 -->
+<!-- DAMIEN CLAIRET 2020 -->
 <!DOCTYPE html>
 <html>
 <head>  
     <meta charset="UTF-8">
-    <title>Sotramp - {% block title %}Portfolio{% endblock %}</title>
+    <title>Damien Clairet - {% block title %}Portfolio{% endblock %}</title>
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'css/lightbox.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/animsition.min.css'%}" rel="stylesheet"  type="text/css">
     <link href="{% static 'css/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/smoothstate.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <style media="screen">
+        .bg-init,
+        .animsition-overlay-slide {
+          background-color: #f5cd79;
+        }
+    </style>
 </head>
-</html>
-<body>
-    
+ <body class="bg-init">
+    <div class="animsition-overlay">
     <!-- Lightbox background -->
     <div class="voile"></div>
 
@@ -28,26 +31,26 @@
     {% endif %}
 
     <!-- Main menu -->
-    <header class="m-scene scene_element--fadein">
-        <ul id="menu">
-            <a href=".."><li>Accueil</li></a>
+    <header class="darktheme">
+        <ul id="menu" class="darktheme">
+            <a class="animsition-link" href=".." data-animsition-out-class="overlay-slide-out-left"><li>Accueil</li></a>
             <a href="#blog"><li>Projets</li></a>
             <a class="js-scrollTo" href="#competences"><li>Compétences</li></a>
             <a href="#contact"><li>Contact</li></a>
             <a href="#"><li>CV</li></a>
         </ul>
 
-        <div id="content" class="scene_element scene_element--fadein">
+        <div id="content">
 
             <!-- Logo -->
-            <h1>sotramp</h1>
+            <h1>Damien Clairet</h1>
             <div id="social">
                 <a href="https://twitter.com/sotramp" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
                 <a href="https://www.instagram.com/damienclairet/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
             </div>
 
             <!-- Right paragraph -->
-            <p>Étudiant en 2ème année de DUT Informatique, je m'intéresse au développement web depuis maintenant plusieurs années. Blabla en faite c'est juste que je me fais chier du coup je fais un portfolio.</p>
+            <p>Étudiant en 2ème année de DUT Informatique à Calais, je m'intéresse au développement web depuis maintenant plusieurs années et je suis actuellement à la recherche d'un stage.</p>
         </div>
 
     <!-- Diagonal -->

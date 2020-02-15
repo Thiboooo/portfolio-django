@@ -1,3 +1,4 @@
+    {%load static %}
     <!-- Footer -->
     <footer>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -10,14 +11,46 @@
                 <form role="form" method="post" action="">
                     {% csrf_token %}
                     <input type="text" name="contactName" required id="id_contactName" placeholder="Nom">
-                    <input type="mail" name="contactEmail" required id="id_contactEmail" placeholder="Adresse mail">
+                    <input type="email" name="contactEmail" required id="id_contactEmail" placeholder="Adresse mail">
                     <textarea name="message" required id="id_message" placeholder="Votre message.." maxlength="250"></textarea>
                     <input type="submit" value="Envoyer">
                 </form>
             </div>
-            <p>&copy; Sotramp 2019 - Tous droits réservés</p>
+            <p>&copy; Damien Clairet 2020 - Tous droits réservés</p>
             <a href="#menu"><p><i class="fas fa-chevron-up"></i> Haut de page</p></a>
         </div>
     </footer>
+    <!-- animation-->
+    </div>
+
+    <!-- javascript -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.mobile.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.mobile.custom.min.js' %}"></script>
+    <!-- animsition.js -->
+    <script src="{% static 'js/animsition.min.js'%}"></script>
+    <script>
+        $(document).ready(function() {
+          $('.animsition-overlay').animsition({
+            inClass: 'overlay-slide-in-bottom',
+            outClass: 'overlay-slide-out-top',
+            overlay : true,
+            overlayClass : 'animsition-overlay-slide',
+            overlayParentElement : 'body'
+          })
+          .one('animsition.inStart',function(){
+      
+            $('body').removeClass('bg-init');
+      
+            console.log('event -> debut');
+          })
+          .one('animsition.inEnd',function(){
+      
+            console.log('event -> fin');
+          });
+        });
+    </script>
 </body>
 </html>
