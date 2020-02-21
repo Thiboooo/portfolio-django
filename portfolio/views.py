@@ -32,10 +32,10 @@ def contact(request):
             template = get_template('contactTemplate.txt')
             context = {'contactName': contactName,'contactEmail': contactEmail,'message': message,}
             content = template.render(context)
-            email = EmailMessage("Nouveau message", content, "Portfolio Website" +'', "", headers = {'Reply-To': contactEmail })
+            email = EmailMessage("New message", content, "Portfolio Website" +'', "", headers = {'Reply-To': contactEmail })
             email.send()
             # Notification of success for the contact form
-            messages.add_message(request, messages.SUCCESS, 'Votre message a été envoyé avec succès !')
+            messages.add_message(request, messages.SUCCESS, 'Your message has been sent successfully !')
             return redirect('index')
-        messages.add_message(request, messages.ERROR, 'Votre message n\'a pas pu être envoyé, veuillez réessayez.')
+        messages.add_message(request, messages.ERROR, 'Your message could not be sent, please try again.')
         return redirect('index')

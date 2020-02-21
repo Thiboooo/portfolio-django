@@ -18,7 +18,7 @@ class ProjectAdmin(admin.ModelAdmin):
         # If the description exceeds 30 characters, cut
         return Truncator(project.desc).chars(30, truncate='..')
 
-    overview.short_description = 'Description du projet'
+    overview.short_description = 'Project description'
 
     # Form configuration
     fieldsets = (
@@ -26,11 +26,11 @@ class ProjectAdmin(admin.ModelAdmin):
             'fields': ('name', 'slug', 'image', 'labels')
         }),
         ('Les liens', {
-            'description': 'Le remplissage n\'est pas obligatire, les champs peuvent donc rester vides.',
+            'description': 'Non-compulsory filling.',
             'fields': ('github', 'demo')
         }),
         ('Description du projet', {
-           'description': 'Courte description du projet. Le formulaire accepte les balises HTML.',
+           'description': 'This field accepts HTML tags.',
            'fields': ('desc', )
         }),
     )

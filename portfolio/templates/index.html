@@ -4,18 +4,18 @@
     {% block content %}
     <!-- Projects -->
     <div class="in scene_element scene_element--fadeinup">
-        <h2 id="blog">Mes projets</h2>
+        <h2 id="blog">My projects</h2>
 
         <ul id="blog">
             {% for project in last_projects %}
                 <a class="animsition-link" href="{% url 'more' id=project.id slug=project.slug %}" data-animsition-out-class="overlay-slide-out-right"><li style="background-image:url('{{ project.image.url }}');"><h2>{{ project.name }}</h2><p>{{ project.desc|truncatewords_html:9 }}</p><p class='more'>En lire plus..</p></li></a>
             {% empty %}
-            <p>Aucun projet.</p>
+            <p>No project.</p>
             {% endfor %}
         </ul>
 
         <!-- Skills -->
-        <h2 id="competences" class="darktheme">Mes compétences</h2>
+        <h2 id="competences" class="darktheme">My skills</h2>
         <div id="skills">
             <i class="devicon-html5-plain colored" data-title="HTML5"></i>
             <i class="devicon-css3-plain colored" data-title="CSS3"></i>
