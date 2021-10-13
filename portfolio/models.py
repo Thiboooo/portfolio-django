@@ -31,3 +31,17 @@ class UploadImg(models.Model):
 
     def __str__(self):
         return self.name
+
+# Contact model
+class Contact(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Name")
+    email = models.EmailField(max_length=100, verbose_name="Email")
+    message = models.TextField(verbose_name="Message")
+    date = models.DateTimeField(default=timezone.now, verbose_name="Day of publication")
+
+    class Meta:
+        verbose_name = "Contact"
+        ordering = ['-date']
+
+    def __str__(self):
+        return self.name
